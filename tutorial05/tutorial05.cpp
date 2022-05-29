@@ -37,11 +37,12 @@ static void RenderSceneCB()
     static float Scale = 0.0f;
     static float Delta = 0.001f;
 
-    Scale += Delta;
+    Scale += (Delta*200);
     if ((Scale >= 1.0f) || (Scale <= -1.0f)) {
         Delta *= -1.0f;
     }
 
+    printf("%f", Scale);
     glUniform1f(gScaleLocation, Scale);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
